@@ -31,3 +31,5 @@ root-context에
 이걸 사용해줘야함.
 
 수정중
+
+외장하드에 git 담아놨었는데 너무 느려서 workingTree변경하여 로컬에 새로 
