@@ -1,17 +1,40 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>  
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>게시판임</title>
+<style>
+  table {
+    width: 500px;
+    border: 1px solid #444444;
+  }
+  th, td {
+    border: 1px solid #444444;
+  }
+</style>
 </head>
 <body>
+<table>
+	<tr>
+		<th>번호</th>
+		<th>제목</th>
+		<th>내용</th>
+		<th>작성자</th>
+		<th>작성일</th>
+	<tr>
 <c:forEach items="${list}" var="list">
-제목 : <input type="text" value="${list.boardTitle}" readonly="readonly" /><br>
-내용 : <input type="text" value="${list.boardContents}" readonly="readonly" /><br>
-시간 : <input type="text" value="${list.boardWriteDate}" readonly="readonly" /><br>
+	<tr>
+		<td>${list.boardNo}</td>
+		<td onclick="contentsView(${list.boardNo})">${list.boardTitle}</td>
+		<td>${list.boardContents}</td>
+		<td>${list.boardWriter}</td>
+		<td> <fmt:formatDate value="${list.boardWriteDate}" pattern="yy-MM-dd HH:mm"/></td>
+	</tr>
 </c:forEach>
+</table>
 </body>
 </html>
