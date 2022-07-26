@@ -11,4 +11,8 @@ public interface BoardMapper {
 
   List<BoardDTO> selectBoardList();
 
+  BoardDTO selectContentsView(int boardNo);
+
+  int insertBoardWrite(BoardDTO boardDto);
+
 }

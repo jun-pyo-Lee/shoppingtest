@@ -25,16 +25,19 @@
 		<th>내용</th>
 		<th>작성자</th>
 		<th>작성일</th>
-	<tr>
-<c:forEach items="${list}" var="list">
-	<tr>
-		<td>${list.boardNo}</td>
-		<td onclick="contentsView(${list.boardNo})">${list.boardTitle}</td>
-		<td>${list.boardContents}</td>
-		<td>${list.boardWriter}</td>
-		<td> <fmt:formatDate value="${list.boardWriteDate}" pattern="yy-MM-dd HH:mm"/></td>
 	</tr>
-</c:forEach>
+	<c:forEach items="${list}" var="list">
+			<tr>
+				<td>${list.boardNo}</td>
+				<td>
+					<a href="contentsView.do?boardNo=${list.boardNo}">${list.boardTitle}</a>
+				</td>
+				<td>${list.boardContents}</td>
+				<td>${list.boardWriter}</td>
+				<td> <fmt:formatDate value="${list.boardWriteDate}" pattern="yy-MM-dd HH:mm"/></td>
+			</tr>
+	</c:forEach>
 </table>
+<input type="button" value="글쓰기" onClick="location.href='boardWrite.do'"/>
 </body>
 </html>

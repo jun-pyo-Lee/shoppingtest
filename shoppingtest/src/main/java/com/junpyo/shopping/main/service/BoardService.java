@@ -8,4 +8,8 @@ public interface BoardService {
 
   List<BoardDTO> getBoardList();
 
+  BoardDTO getContentsView(int boardNo);
+
+  int setBoardWrite(BoardDTO boardDto);
+
 }

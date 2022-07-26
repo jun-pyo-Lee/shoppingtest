@@ -7,4 +7,26 @@
 	<select id = "selectBoardList" resultType="boardDto">
 		select * from board
 	</select>
+	
+	<select id = "selectContentsView" resultType="boardDto">
+		select * from board where board_no=#{boardNo}
+	</select>
+	
+	<insert id="insertBoardWrite" parameterType="boardDto">
+		<![CDATA[
+			insert
+			into
+			board
+			values
+			(
+				boardNo.nextval,
+				#{boardTitle},
+				#{boardContents},
+				#{boardWriter},
+				sysdate,
+				'N',
+				null
+			)
+		]]>
+	</insert>
 </mapper>

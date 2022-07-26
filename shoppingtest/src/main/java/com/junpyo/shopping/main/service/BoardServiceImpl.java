@@ -16,9 +16,21 @@ public class BoardServiceImpl implements BoardService {
 
   @Override
   public List<BoardDTO> getBoardList() {
-    System.out.println("서비스 들어옴");
     List<BoardDTO> list = mapper.selectBoardList();
     return list;
+  }
+
+  @Override
+  public BoardDTO getContentsView(int boardNo) {
+    BoardDTO dto = mapper.selectContentsView(boardNo);
+    return dto;
+  }
+
+  @Override
+  public int setBoardWrite(BoardDTO boardDto) {
+    int check = mapper.insertBoardWrite(boardDto);
+
+    return check;
   }
 
 }
