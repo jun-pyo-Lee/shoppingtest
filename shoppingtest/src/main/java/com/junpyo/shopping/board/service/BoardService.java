@@ -1,8 +1,8 @@
-package com.junpyo.shopping.main.service;
+package com.junpyo.shopping.board.service;
 
 import java.util.List;
 
-import com.junpyo.shopping.main.dto.BoardDTO;
+import com.junpyo.shopping.board.dto.BoardDTO;
 
 public interface BoardService {
 

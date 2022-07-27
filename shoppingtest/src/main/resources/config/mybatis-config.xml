@@ -7,7 +7,9 @@
 	</settings>
 	
 	<typeAliases>
-		<typeAlias type="com.junpyo.shopping.main.dto.BoardDTO" alias="boardDto"/>
+		<typeAlias type="com.junpyo.shopping.board.dto.BoardDTO" alias="boardDto"/>
+		<typeAlias type="com.junpyo.shopping.user.dto.UserDTO" alias="userDto"/>
+		
 	</typeAliases>
 	
 	

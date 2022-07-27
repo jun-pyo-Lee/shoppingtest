@@ -22,7 +22,10 @@
 	</beans:bean>
 	
 	<context:component-scan base-package="com.junpyo.shopping.main.controller" />
-	<context:component-scan base-package="com.junpyo.shopping.main.service" />
+	<context:component-scan base-package="com.junpyo.shopping.board.controller" />
+	<context:component-scan base-package="com.junpyo.shopping.board.service" />
+	<context:component-scan base-package="com.junpyo.shopping.user.controller" />
+	<context:component-scan base-package="com.junpyo.shopping.user.service" />
 	
 	
 </beans:beans>

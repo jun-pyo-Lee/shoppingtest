@@ -21,6 +21,7 @@
 		  <property value="classpath:/mapper/*Mapper.xml" name="mapperLocations" />
 		</bean>
 		
-		<mybatis-spring:scan base-package="com.junpyo.shopping.main.mapper" />
+		<mybatis-spring:scan base-package="com.junpyo.shopping.board.mapper" />
+		<mybatis-spring:scan base-package="com.junpyo.shopping.user.mapper" />
 		
 </beans>

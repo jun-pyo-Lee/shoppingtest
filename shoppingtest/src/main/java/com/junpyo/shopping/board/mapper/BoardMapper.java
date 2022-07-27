@@ -1,10 +1,10 @@
-package com.junpyo.shopping.main.mapper;
+package com.junpyo.shopping.board.mapper;
 
 import java.util.List;
 
 import org.apache.ibatis.annotations.Mapper;
 
-import com.junpyo.shopping.main.dto.BoardDTO;
+import com.junpyo.shopping.board.dto.BoardDTO;
 
 @Mapper
 public interface BoardMapper {

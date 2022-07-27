@@ -1,4 +1,4 @@
-package com.junpyo.shopping.main.dto;
+package com.junpyo.shopping.board.dto;
 
 import java.util.Date;
 
