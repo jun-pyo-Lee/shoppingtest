@@ -37,3 +37,13 @@ root-context에
 **중요**
 만약 clone으로 해당 프로젝트를 가져올 시 maven 업데이트를 필히 실시해주거나, projectClean을 이용하여 다시 셋팅을 맞춰주고 
 project 마우스 우클릭-> properties->Project Facets ->Java->Runtimes 탭-> Apache Tomocat 체크 후 Apply 해주어야 정상적으로 작동됨.
+
+
+게시글 작성 후 한글 꺠짐 현상 발생되서 
+webxml에 filter걸어줬음
+
+만들고 나서 보니 변수명과 jsp파일 명을 자바 컨벤션에 맞춰 작성하지 않음.
+수정이 필요함.
+
+
+CRUD 기능구현 완성.
