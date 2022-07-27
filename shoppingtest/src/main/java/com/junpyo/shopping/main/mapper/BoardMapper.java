@@ -15,4 +15,10 @@ public interface BoardMapper {
 
   int insertBoardWrite(BoardDTO boardDto);
 
+  int deleteList(int boardNo);
+
+  BoardDTO selectUpdateForm(int boardNo);
+
+  int updateBoardForm(BoardDTO boardDto);
+
 }

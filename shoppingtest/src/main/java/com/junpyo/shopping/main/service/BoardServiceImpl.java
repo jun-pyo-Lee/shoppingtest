@@ -33,4 +33,22 @@ public class BoardServiceImpl implements BoardService {
     return check;
   }
 
+  @Override
+  public int setDeleteList(int boardNo) {
+    int check = mapper.deleteList(boardNo);
+    return check;
+  }
+
+  @Override
+  public BoardDTO getUpdateForm(int boardNo) {
+    BoardDTO dto = mapper.selectUpdateForm(boardNo);
+    return dto;
+  }
+
+  @Override
+  public int setUpdateForm(BoardDTO boardDto) {
+    int check = mapper.updateBoardForm(boardDto);
+    return check;
+  }
+
 }

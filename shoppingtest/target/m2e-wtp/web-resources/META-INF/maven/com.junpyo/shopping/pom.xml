@@ -146,6 +146,12 @@
 		    <artifactId>ojdbc8</artifactId>
 		    <version>21.1.0.0</version>
 		</dependency>
+		<!-- 한글 깨짐 증상 , -->
+		<dependency>
+			<groupId>com.oracle.ojdbc</groupId>
+			<artifactId>orai18n</artifactId>
+			<version>19.3.0.0</version>
+		</dependency>
 	
 		<!-- Test -->
 		<dependency>

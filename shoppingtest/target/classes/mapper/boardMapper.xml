@@ -5,7 +5,7 @@
 
 <mapper namespace="com.junpyo.shopping.main.mapper.BoardMapper">
 	<select id = "selectBoardList" resultType="boardDto">
-		select * from board
+		select * from board where board_del_yn='N'
 	</select>
 	
 	<select id = "selectContentsView" resultType="boardDto">
@@ -29,4 +29,24 @@
 			)
 		]]>
 	</insert>
+	
+	<update id="deleteList">
+		<![CDATA[
+			update board set board_del_yn = 'Y', board_modify_date = sysdate where board_no=#{boardNo}
+		]]>
+	</update>
+	<!-- 수정버튼 클릭 시 조회 -->
+	<select id = "selectUpdateForm" resultType="boardDto">
+		<![CDATA[
+		 select * from board where board_no = #{boardNo}
+		]]>
+	</select>
+	
+	<!-- 수정 -->
+	<update id = "updateBoardForm">
+		<![CDATA[
+				update board set board_title=#{boardTitle}, board_writer=#{boardWriter}, board_contents=#{boardContents}, board_modify_date = sysdate where board_no=#{boardNo}
+			]]>
+	
+	</update>
 </mapper>

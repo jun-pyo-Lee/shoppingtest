@@ -38,7 +38,6 @@ public class MainController {
 
   @RequestMapping(value = "/")
   public String mainPage(Model model) {
-    System.out.println("메인페이지 진입");
     return "mainPage";
   }
 
@@ -49,7 +48,6 @@ public class MainController {
 
   @RequestMapping(value = "boardListView.do")
   public String boardListView(Model model) {
-    System.out.println("보드리스트 진입 ");
     List<BoardDTO> list = boardService.getBoardList();
     model.addAttribute("list", list);
     return "boardListView";
@@ -57,7 +55,6 @@ public class MainController {
 
   @RequestMapping(value = "contentsView.do")
   public String contentsView(int boardNo, Model model) {
-    System.out.println("게시글 보기 진입");
     BoardDTO dto = boardService.getContentsView(boardNo);
     model.addAttribute("dto", dto);
     return "contentsView";
@@ -65,8 +62,31 @@ public class MainController {
 
   @RequestMapping(value = "writeCheck.do")
   public String writeCheck(BoardDTO boardDto) {
-    System.out.println("작성창진입");
     boardService.setBoardWrite(boardDto);
+    return "redirect:/boardListView.do";
+  }
+
+  // 해당 게시글 삭제(실제 데이터 삭제 X 삭제유무 컬럼값만 변경)
+  @RequestMapping(value = "deleteList.do")
+  public String deleteList(int boardNo) {
+    boardService.setDeleteList(boardNo);
+    return "redirect:/boardListView.do";
+  }
+
+  @RequestMapping(value = "updateBoard.do")
+  public String updateBoard(int boardNo, Model model) {
+    BoardDTO dto = boardService.getUpdateForm(boardNo);
+    model.addAttribute("dto", dto);
+    return "updateBoard";
+  }
+
+  @RequestMapping(value = "setUpdateBoard.do")
+  public String setUpdateBoard(BoardDTO boardDto) {
+    System.out.println(boardDto.getBoardNo());
+    System.out.println(boardDto.getBoardTitle());
+    System.out.println(boardDto.getBoardWriter());
+    System.out.println(boardDto.getBoardContents());
+    boardService.setUpdateForm(boardDto);
     return "redirect:/boardListView.do";
   }
 }
